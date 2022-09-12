@@ -1,0 +1,78 @@
+<script language="javascript">
+/*
+Diketahui:
+pegawai: Ridwan
+jabatan: manager
+status: menikah 
+Tugas: 
+Cetak Data Pegawai berbentuk tabel:
+Judul Kolom gunakan thead
+Data2 gunakan tbody 
+Nama Pegawai, Jabatan, Status, 
+Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt 
+Tunjangan Jabatan: 15% dari gapok
+BPJS: 10% dari gapok
+Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok
+Total Gaji: jumlahlahkan seluruh element gaji (gunakan tfoot)
+Format pengumpulan tugas:
+Disimpan di githubnya masing2:
+contoh:
+buat repo baru (javascript) -> file tugas di push di repo tsb
+lalu linknya dlm txt di assign ke LMS
+*/
+
+const pegawai = "Ridwan";
+const jabatan = "Manager";
+const status = "Menikah";
+let gajipokok = ''
+if( jabatan == "Manager"){
+    gajipokok = 15000000
+}else if( jabatan == "Asisten Manager"){
+    gajipokok = 10000000
+}else{
+    gajipokok = 5000000
+}
+
+let tunjangan_jabatan = gajipokok * (15/100);
+let bpjs = gajipokok * (10/100);
+let tunjangan_keluarga = (status =="Menikah") ? gajipokok *(20/100) : 0;
+const total_gaji = gajipokok + tunjangan_jabatan + bpjs + tunjangan_keluarga;
+
+document.write(`
+Nama Pegawai : ${pegawai} <br/>
+Jabatan : ${jabatan} <br/>
+Status : ${status} <br/>
+
+<table border="1">
+    <thead bgcolor="yellow">
+        <tr>
+            <td>DATA</td>
+            <td>KETERANGAN</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Gaji Pokok</td>
+            <td>RP ${gajipokok} </td>
+        </tr>
+        <tr>
+            <td>Tunjangan Jabatan</td>
+            <td>RP ${tunjangan_jabatan} </td>
+        </tr>
+        <tr>
+            <td>BPJS</td>
+            <td>RP ${bpjs} </td>
+        </tr>
+        <tr>
+            <td>Tunjangan Keluarga</td>
+            <td>RP ${tunjangan_keluarga} </td>
+        </tr>
+    </tbody>
+    <tfoot bgcolor="aqua">
+        <tr>
+            <td>Total Gaji</td>
+            <td>RP ${total_gaji} </td>
+        </tr>
+    </tfoot>
+</table>`);
+</script>

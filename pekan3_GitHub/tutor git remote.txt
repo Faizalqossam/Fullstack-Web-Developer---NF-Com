@@ -1,0 +1,11 @@
+langkah langkah
+1.git clone https://github.com/Faizalqossam/Repository-Kelompok-2-MSIB-NF-Computer.git
+2.cd Repository-Kelompok-2-MSIB-NF-Computer
+3.git init
+4.git remote -v
+5.cek branch (git branch)
+6.buat branch baru *contoh (git branch FaizalqossamMSIB) sesuaikan nama branch dengan nama kalian
+7.akses branch yg sudah dibuat (git checkout FaizalqossamMSIB)
+8.add semua file (git add .)
+9.commit dan beri komentar (git commit -m "tugas git 2 msib [nama_kalian])
+10.push sesuai nama branch yg kalian buat *contoh (git push -u origin Faizalqossam)
