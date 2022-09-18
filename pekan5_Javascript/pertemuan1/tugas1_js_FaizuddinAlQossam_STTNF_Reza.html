@@ -25,6 +25,7 @@ const pegawai = "Ridwan";
 const jabatan = "Manager";
 const status = "Menikah";
 let gajipokok = ''
+
 if( jabatan == "Manager"){
     gajipokok = 15000000
 }else if( jabatan == "Asisten Manager"){
@@ -35,7 +36,7 @@ if( jabatan == "Manager"){
 
 let tunjangan_jabatan = gajipokok * (15/100);
 let bpjs = gajipokok * (10/100);
-let tunjangan_keluarga = (status =="Menikah") ? gajipokok *(20/100) : 0;
+let tunjangan_keluarga = (status =="Menikah") ? gajipokok * (20/100) : 0;
 const total_gaji = gajipokok + tunjangan_jabatan + bpjs + tunjangan_keluarga;
 
 document.write(`
