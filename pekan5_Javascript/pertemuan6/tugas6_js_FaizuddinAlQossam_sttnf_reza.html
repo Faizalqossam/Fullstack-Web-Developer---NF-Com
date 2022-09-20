@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    div{
+        margin: 5rem auto;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Gempa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-sm-6">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Lokasi</th>
+                    <th>Skala</th>
+                    <th>Dampak</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+            
+            <script>
+                class Gempa{
+                    constructor(no, lokasi, skala){
+                        this.no = no
+                        this.lokasi = lokasi
+                        this.skala = skala
+                    }
+
+                    dampakGempa() {
+                        if (this.skala <= 2) {
+                            return this.dampak = 'dampaknya tidak terasa';
+                        }else if (this.skala > 2 && this.skala <=4) {
+                            return this.dampak = 'dampaknya bangunan retak-retak';
+                        }else if (this.skala  > 4 && this.skala <=6) {
+                            return this.dampak = 'dampaknya bangunan roboh'
+                        }else{
+                            return this.dampak = 'dampaknya bangunan roboh dan berpotensi tsunami'
+                        }
+                    }
+
+                    infoGempa(){
+
+                        document.write(`
+                        
+                            <tr>
+                                <td>${this.no}</td>
+                                <td>${this.lokasi}</td>
+                                <td>${this.skala}</td>
+                                <td>${this.dampakGempa()}</td>
+                            </tr>
+
+                        `)
+                    }
+                }
+
+                g1 = new Gempa(1,'Bekasi',3).infoGempa();
+                g2 = new Gempa(2,'Depok',4).infoGempa();
+                g3 = new Gempa(3,'Bogor',7).infoGempa();
+                g4 = new Gempa(4,'Banten',1).infoGempa();
+                g5 = new Gempa(5,'Cikarang',3).infoGempa();
+                g6 = new Gempa(6,'Tanggerang',2).infoGempa();
+                g7 = new Gempa(7,'Bandung',6).infoGempa();
+                g8 = new Gempa(8,'Jakarta',7).infoGempa();
+                g9 = new Gempa(9,'Solo',10).infoGempa();
+                g10 = new Gempa(10,'Surabaya',4).infoGempa();
+
+            </script>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
